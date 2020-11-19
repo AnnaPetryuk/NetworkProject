@@ -1,0 +1,16 @@
+/* .posts {
+    border: 2px solid rosybrown;
+} */
+
+.item {
+    width: 500px;
+    color: greenyellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item img {
+    width: 50px;
+    border-radius: 50px;
+}
