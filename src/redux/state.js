@@ -36,39 +36,23 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer; // Pattern observer (по цьому патерну працює addEventListener)
     },
-
-    addPost () {
-        let newPost = { 
-            mesId: 5,
-            message: this._state.profilePage.newPostText,
-            likeCount: 0
-        };
     
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewPostText(newPostText) {
-        this._state.profilePage.newPostText = newPostText;
-        this._callSubscriber(this._state);
-    }
-    // ,
-    // dispatch(action) {
-    //     if(action.type === 'ADD-POST') {
-    //         let newPost = { 
-    //             mesId: 5,
-    //             message: this._state.profilePage.newPostText,
-    //             likeCount: 0
-    //         };
+    dispatch(action) {
+        if(action.type === 'ADD-POST') {
+            let newPost = { 
+                mesId: 5,
+                message: this._state.profilePage.newPostText,
+                likeCount: 0
+            };
         
-    //         this._state.profilePage.posts.push(newPost);
-    //         this._state.profilePage.newPostText = '';
-    //         this._callSubscriber(this._state);
-    //     } else if(action.type === 'UPDATE-NEW-POST-TEXT') {
-    //         this._state.profilePage.newPostText = newPostText;
-    //         this._callSubscriber(this._state);
-    //     }
-    // }
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if(action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
+    }
 }
 
 
