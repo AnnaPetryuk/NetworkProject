@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { sendMessageCreator ,updateNewMessageBodyCreator } from "../../redux/state";
+import { sendMessageCreator ,updateNewMessageBodyCreator } from "../../redux/dialogs-reducer";
 import DialogItem from "./DialogItem/DialogItem";
 import styles from "./Dialogs.module.css";
 import Message from "./Message/Message";
@@ -16,7 +16,7 @@ const Dialogs = (props) => {
         let body = e.target.value;
         props.store.dispatch(updateNewMessageBodyCreator(body));
     }
-
+    console.dir(state.dialogsData);
     return (
         <div className={styles.dialogs}>
             <div className={styles.dialogsItems}>
