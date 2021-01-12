@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 
 const App = (props) => {
+    console.log(props.store);
+    debugger;
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -15,7 +17,7 @@ const App = (props) => {
                     <Route
                         path="/dialogs"
                         render={() => (
-                            <Dialogs store={props.store} />
+                            <Dialogs store={props.state} dispatch={props.dispatch}/>
                         )}
                     />
                     <Route

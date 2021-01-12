@@ -5,16 +5,17 @@ import styles from "./Dialogs.module.css";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-    let state = props.store.getState().dialogsPage;
-
+    debugger;
+    let state = props.store.dialogPage;
+    
     let newMessageBody = state.newMessageBody;
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator());
+        props.dispatch(sendMessageCreator());
     }
 
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch(updateNewMessageBodyCreator(body));
+        props.dispatch(updateNewMessageBodyCreator(body));
     }
     console.dir(state.dialogsData);
     return (
