@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import React from 'react';
 import styles from "../Dialogs.module.css";
 
 const Message = (props) => {
