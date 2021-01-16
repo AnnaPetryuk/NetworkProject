@@ -4,15 +4,18 @@ import styles from './Users.module.css'
 import userPhoto from '../../assets/images/user.jpg'
 
 const Users = (props) => {
-    /* Не правильно нарушається правило 
-    чистої презентаційної функції*/
-    if(props.users.length === 0) {
-        axios
-            .get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => {
-                props.setUsers(response.data.items);
-            });
+    // Окрема функція це вже не side effect
+    // бо викликається по кліку
+    let getUsers = () => {
+        if(props.users.length === 0) {
+            axios
+                .get("https://social-network.samuraijs.com/api/1.0/users")
+                .then(response => {
+                    props.setUsers(response.data.items);
+                });
+        } 
     }
+    
     // props.setUsers(
         //     [
         //         { id: 1, photoUrl: 'https://avatarfiles.alphacoders.com/101/thumb-101498.jpg', followed: true, fullName: "Anna", status: 'I am happy', location: {city: 'Kyiv', country: 'Ukraine'}},
@@ -24,6 +27,7 @@ const Users = (props) => {
     
     return (
         <div> 
+            <button onClick={getUsers}>Get users</button>
             { 
                 props.users.map(item => {
                     return <div key={item.id}>
