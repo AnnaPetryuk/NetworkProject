@@ -4,12 +4,6 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: []
-    // users: [
-    //     { id: 1, photoUrl: 'https://avatarfiles.alphacoders.com/101/thumb-101498.jpg', followed: true, fullName: "Anna", status: 'I am happy', location: {city: 'Kyiv', country: 'Ukraine'}},
-    //     { id: 2, photoUrl: 'https://avatarfiles.alphacoders.com/101/thumb-101498.jpg', followed: true, fullName: "Anna", status: 'I am a boss', location: {city: 'Lviv', country: 'Ukraine'}},
-    //     { id: 3, photoUrl: 'https://avatarfiles.alphacoders.com/101/thumb-101498.jpg', followed: false, fullName: "Anna", status: 'I am happy', location: {city: 'Odessa', country: 'Ukraine'}},
-    //     { id: 4, photoUrl: 'https://avatarfiles.alphacoders.com/101/thumb-101498.jpg', followed: true, fullName: "Anna", status: 'I am a boss', location: {city: 'Kyiv', country: 'Ukraine'}}
-    // ]
 }
 
 const usersReducer = (state = initialState, action) => {
