@@ -5,13 +5,27 @@ import userPhoto from '../../assets/images/user.jpg'
 
 class Users extends React.Component {
 
-    constructor(props) {
+    // Якщо конструктор нічого не роботить окрім
+    // Коду, що нижче, він не потрібен
+    /*constructor(props) {
         super(props);
+    }*/
+
+    // Calls when component is rendered
+    // Hook for ajax requests
+    // Hook for all side effects
+    // DOM is ready
+    componentDidMount() {
         axios
             .get("https://social-network.samuraijs.com/api/1.0/users")
             .then(response => {
                 this.props.setUsers(response.data.items);
             });
+    }
+
+    // Hook for rerender componenrs
+    componentDidUpdate() {
+
     }
     
     render() {
