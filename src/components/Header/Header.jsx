@@ -5,7 +5,7 @@ import styles from './Header.module.css'
 const Header = (props) => {
     return (
         <header className={styles.header}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Oikya_Front_Logo.png"/>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Oikya_Front_Logo.png" alt="Logo"/>
 
             <div className={styles.loginBlock}>
                 { props.isAuth ? props.login :

@@ -10,7 +10,7 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div>
-                <img src="https://www.publicdomainpictures.net/pictures/320000/nahled/background-image.png" />
+                <img src="https://www.publicdomainpictures.net/pictures/320000/nahled/background-image.png" alt={"Background"}/>
             </div>
             <div className={styles.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
