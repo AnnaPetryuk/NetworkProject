@@ -33,6 +33,19 @@ class ProfileStatus extends React.Component {
         })
     }
 
+    // Сюди приходять об'єкти попередніх пропсів і попереднього стейта
+    componentDidUpdate(prevProps, prevState) {
+        // Тут можна міняти стейт лише за якоїсь умови
+        // Якщо не буде умови => зациклиться
+        if(prevProps.status !== this.props.status) {
+            debugger;
+            this.setState({
+                status: this.props.status
+            })
+        }
+        
+    }
+
     render() {
         return (
             <div>
