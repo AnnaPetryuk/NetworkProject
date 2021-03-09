@@ -2,6 +2,8 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import {maxLengthCreator, required} from "../../../utils/validators/validators"
+import { TextArea } from "../../common/formsControllers/formController";
 
 
 const MyPosts = (props) => {
@@ -24,11 +26,14 @@ const MyPosts = (props) => {
     );
 }
 
+const maxLength10 = maxLengthCreator(10);
+
 const AddNewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field name={'newPostText'} component={'textarea'}/>
+                <Field name={'newPostText'} component={TextArea} placeholder={"Post message"}
+                    validate={[required, maxLength10]}/>
             </div>
             <div>
                 <button>Add post</button>
