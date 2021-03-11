@@ -1,6 +1,17 @@
+// import { createSelector } from "reselect";
+
 export const getAllUsers = (state) => {
     return state.usersPage.users
 }
+
+// Приклад селектора
+// export const getAllUsersSuper = (state) => {
+//     return getAllUsers(state).filter(u => true);
+// }
+
+// export const getAllUsersSuperSelector = createSelector(getAllUsers, (users) => {
+//     return users.filter(u => true);
+// });
 
 export const getPageSize = (state) => {
     return state.usersPage.pageSize
