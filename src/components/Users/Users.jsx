@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./Users.module.css";
 import userPhoto from "../../assets/images/user.jpg";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
-import { userAPI } from "../../api/api";
 
 let Users = (props) => {
 
@@ -48,6 +46,7 @@ let Users = (props) => {
                                                 ? item.photos.small
                                                 : userPhoto
                                         }
+                                        alt="ProfileImg"
                                         className={styles.userPhoto}
                                     />
                                 </NavLink>

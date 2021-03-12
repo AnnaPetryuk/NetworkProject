@@ -1,7 +1,6 @@
 import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import styles from "./ProfileInfo.module.css";
-import ProfileStatus from './ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 const ProfileInfo = (props) => {
@@ -15,7 +14,7 @@ const ProfileInfo = (props) => {
                 <img src="https://www.publicdomainpictures.net/pictures/320000/nahled/background-image.png" alt={"Background"}/>
             </div> */}
             <div className={styles.descriptionBlock}>
-                <img src={props.profile.photos.large}/>
+                <img src={props.profile.photos.large} alt="ProfileImg"/>
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
                 {/* ava + description */}
             </div>
