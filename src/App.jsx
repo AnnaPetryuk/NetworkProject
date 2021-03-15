@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, withRouter } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import { compose } from 'redux';
 import "./App.css";
 import Preloader from './components/common/Preloader/Preloader';
@@ -22,30 +22,28 @@ class App extends React.Component {
             return <Preloader/>
         }
         return (
-            <BrowserRouter>
-                <div className="app-wrapper">
-                    <HeaderContainer />
-                    <Navbar />
-                    <div className="app-wrapper-content">
-                        <Route
-                            path="/dialogs"
-                            render={() => <DialogsContainer />}
-                        />
-                        <Route
-                            path="/profile/:userId?"
-                            render={() => <ProfileContainer />}
-                        />
-                        <Route
-                            path="/users"
-                            render={() => <UsersContainer />}
-                        />
-                        <Route
-                            path="/login"
-                            render={() => <Login />}
-                        />
-                    </div>
+            <div className="app-wrapper">
+                <HeaderContainer />
+                <Navbar />
+                <div className="app-wrapper-content">
+                    <Route
+                        path="/dialogs"
+                        render={() => <DialogsContainer />}
+                    />
+                    <Route
+                        path="/profile/:userId?"
+                        render={() => <ProfileContainer />}
+                    />
+                    <Route
+                        path="/users"
+                        render={() => <UsersContainer />}
+                    />
+                    <Route
+                        path="/login"
+                        render={() => <Login />}
+                    />
                 </div>
-            </BrowserRouter>
+            </div>
         )
     }
 }
@@ -55,6 +53,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(
-    // withRouter,
+    withRouter,
     connect(mapStateToProps, { initializeApp })
 )(App);
