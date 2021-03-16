@@ -6,14 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import store from "./redux/redux-store";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import SamuraiJsApp from "./App";
 
 // let rerenderEntireTree = (state) => {
 ReactDOM.render(
-    <BrowserRouter>
-        <Provider store={store}>
-            <App/>
-        </Provider>
-    </BrowserRouter>,
+    // <BrowserRouter>
+    //     <Provider store={store}>
+    //         <App/>
+    //     </Provider>
+    // </BrowserRouter>,
+    <SamuraiJsApp/>,
     document.getElementById("root")
 );
 // };
