@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Header.module.css'
+import styles from './Header.module.css';
+import logo from "../../assets/images/logo.png";
 
 const Header = (props) => {
     return (
         <header className={styles.header}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Oikya_Front_Logo.png" alt="Logo"/>
+            <img src={logo} alt="Logo"/>
 
             <div className={styles.loginBlock}>
                 { props.isAuth 

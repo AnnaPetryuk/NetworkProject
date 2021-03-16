@@ -1,4 +1,46 @@
 .userPhoto {
     width: 100px;
     height: auto;
+    vertical-align: middle;
+    border-radius: 64px;
+}
+.usersWrapper {
+    padding: 15px;
+}
+
+.userContainer {
+    margin: 0 auto;
+    /* display: grid; */
+    /* grid-template-columns: 3fr 3fr 3fr; */
+    /* grid-gap: 10px; */
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-color: ivory; */
+    /* border: 1px solid #4db476; */
+    box-shadow: 0px 0px 5px #4db476;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.userButton {
+    padding: 5px 10px;
+    width: 100px;
+    border: 0;
+    background-color: #4db476;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.userInfo {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0 50px;
 }

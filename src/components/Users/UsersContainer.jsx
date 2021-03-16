@@ -6,6 +6,7 @@ import Preloader from '../common/Preloader/Preloader';
 import { compose } from 'redux';
 import { getAllUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingInProgress } from '../../redux/users-selectors';
 import Paginator from '../common/Paginator/Paginator';
+import styles from "./Users.module.css";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -20,9 +21,7 @@ class UsersContainer extends React.Component {
     
     render() {
         return (
-            <>
-                <Paginator currentPage={this.props.currentPage} totalItemsCount={this.props.totalUsersCount}
-                pageSize={this.props.pageSize} onPageChanged={this.onPageChanged} />
+            <div className={styles.usersWrapper}>
                 {
                     this.props.isFetching ? 
                     <Preloader/> :
@@ -37,7 +36,9 @@ class UsersContainer extends React.Component {
                         followingInProgress={this.props.followingInProgress}
                     />
                 }
-            </>
+                <Paginator style={this.props.isFetching ? {display: 'none'} : {display: 'block'}} currentPage={this.props.currentPage} totalItemsCount={this.props.totalUsersCount}
+                pageSize={this.props.pageSize} onPageChanged={this.onPageChanged} />
+            </div>
         )
     }
 }
