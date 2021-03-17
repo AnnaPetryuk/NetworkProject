@@ -22,13 +22,13 @@ let User = ({user, followingInProgress, follow, unfollow}) => {
                 <div>{user.status}</div>
                 <div>
                     {user.followed ? (
-                        <button className={styles.userButton} disabled={followingInProgress.some(id => id === user.id)} 
+                        <button className={styles.userButtonUnfollow} disabled={followingInProgress.some(id => id === user.id)} 
                                     onClick={() => { unfollow(user.id)}}
                         >
                             Unfollow
                         </button>
                     ) : (
-                        <button className={styles.userButton} disabled={followingInProgress.some(id => id === user.id)} 
+                        <button className={styles.userButtonFollow} disabled={followingInProgress.some(id => id === user.id)} 
                                     onClick={() => { follow(user.id)}}
                         >
                             Follow

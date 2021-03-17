@@ -36,8 +36,12 @@ class UsersContainer extends React.Component {
                         followingInProgress={this.props.followingInProgress}
                     />
                 }
-                <Paginator style={this.props.isFetching ? {display: 'none'} : {display: 'block'}} currentPage={this.props.currentPage} totalItemsCount={this.props.totalUsersCount}
-                pageSize={this.props.pageSize} onPageChanged={this.onPageChanged} />
+                {
+                    this.props.isFetching ? 
+                    <></> :
+                    <Paginator style={this.props.isFetching ? {display: 'none'} : {display: 'block'}} currentPage={this.props.currentPage} totalItemsCount={this.props.totalUsersCount}
+                    pageSize={this.props.pageSize} onPageChanged={this.onPageChanged} />
+                }
             </div>
         )
     }

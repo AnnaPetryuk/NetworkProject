@@ -27,11 +27,20 @@
     padding: 10px;
 }
 
-.userButton {
+.userButtonFollow {
     padding: 5px 10px;
     width: 100px;
     border: 0;
     background-color: #4db476;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.userButtonUnfollow {
+    padding: 5px 10px;
+    width: 100px;
+    border: 0;
+    background-color: #b44d4d;
     border-radius: 5px;
     color: #ffffff;
 }

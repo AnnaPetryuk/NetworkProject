@@ -4,14 +4,16 @@ import { BrowserRouter, Route, withRouter } from "react-router-dom";
 import { compose } from 'redux';
 import "./App.css";
 import Preloader from './components/common/Preloader/Preloader';
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import Navbar from "./components/Navbar/Navbar";
-import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import { withSuspence } from './hoc/withSuspence';
 import { initializeApp } from './redux/app-reducer';
 import store from './redux/redux-store';
+
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
 
 class App extends React.Component {
     componentDidMount() {
@@ -29,11 +31,11 @@ class App extends React.Component {
                 <div className="app-wrapper-content">
                     <Route
                         path="/dialogs"
-                        render={() => <DialogsContainer />}
+                        render={withSuspence(DialogsContainer)}
                     />
                     <Route
                         path="/profile/:userId?"
-                        render={() => <ProfileContainer />}
+                        render={withSuspence(ProfileContainer)}
                     />
                     <Route
                         path="/users"
