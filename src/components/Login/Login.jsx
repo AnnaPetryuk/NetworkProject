@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import { reduxForm } from "redux-form";
 import { CreateField, Input } from "../common/formsControllers/formController";
 import { required } from "../../utils/validators/validators";
 import { connect } from "react-redux";
@@ -16,7 +16,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
                 
             {captchaUrl && 
                 <div>
-                    <img src={captchaUrl}/>
+                    <img src={captchaUrl} alt="captcha"/>
                     { CreateField('Captcha', 'captcha', [required], Input) }
                 </div>
             }
