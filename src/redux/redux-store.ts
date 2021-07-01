@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 import {reducer as formReducer } from 'redux-form';
 import appReducer from "./app-reducer";
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
     profilePage: profileReducer,
     dialogPage: dialogReducer,
     usersPage: usersReducer,
@@ -16,11 +16,19 @@ let reducers = combineReducers({
     form: formReducer // обов'язково має називатись form !!!
 });
 
+type RootReducerType = typeof rootReducer; // (state: GLOBALSTATE) => (GLOABALSTATE)
+export type AppStateType = ReturnType<RootReducerType>;
+
+
 // Optimizations for redux chrome extension
+// @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, composeEnhancers(
+const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunkMiddleware)
 ));
+
+// @ts-ignore
+window.__store__ = store;
 
 // Add this and comment previous for prod
 // let store = createStore(reducers, applyMiddleware(thunkMiddleware));

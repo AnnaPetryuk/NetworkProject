@@ -1,8 +1,16 @@
 import React from "react";
+import { UserType } from "../../types/types";
 import User from "./User/User";
 import styles from "./Users.module.css";
 
-let Users = ({users, ...props}) => {
+type PropsType = {
+    users: Array<UserType>,
+    followingInProgress: Array<number>,
+    unfollow: (userId: number) => void,
+    follow: (userId: number) => void
+}
+
+let Users: React.FC<PropsType> = ({users, ...props}) => {
     return (
         <div className={styles.userContainer}>
             { users.map((item) => {
